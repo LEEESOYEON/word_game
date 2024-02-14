@@ -17,7 +17,8 @@ public class Game_3 {
 			"tomato",
 			"plum",
 			"peach",
-			"grape"
+			"grape",
+			"mango"
 	};
 	String[][] game_w=new String[4][3];//게임판
 	int cnt=0;//블록 갯수
