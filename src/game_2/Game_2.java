@@ -44,7 +44,7 @@ public class Game_2 {
 				user_word(user);
 			}
 			if(total>=100) {
-				System.out.println("현재 점수 : "+total);
+				System.out.println("총 점수 : "+total);
 				System.out.println("100점 이상으로 게임을 종료합니다.");
 				break;
 			}
@@ -88,13 +88,13 @@ public class Game_2 {
 					score+=10;
 					total+=score;
 					b=false;
-					if(i-1<0) {
+					if(i-1<0) {//상단에 단어가 없을시 랜덤단어 생성
 						game_w[i][j]=word[r.nextInt(word.length)];
-					}else {
+					}else {//상단에 단어 존재시
 						for(int k=0; i-k>=0; k++) {
 							if(i-k==0) {
 								game_w[i-k][j]=word[r.nextInt(word.length)];
-							}else {
+							}else {//기존 상단 언어로 구성
 								game_w[i-k][j]=game_w[i-k-1][j];
 							}
 						}
@@ -108,6 +108,7 @@ public class Game_2 {
 		}
 		re_game_word();
 		System.out.println(score+" 점수를 획득했습니다.");
+		System.out.println("현재 누적 점수 : "+total);
 	}
 	//단어출력 메서드
 	public void re_game_word() {//게임이 진행되며 갱신되는 게임판
